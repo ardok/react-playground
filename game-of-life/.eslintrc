@@ -1,6 +1,12 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "plugins": [
+    "jest"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
   "rules": {
     "arrow-parens": [2, "always"],
     "comma-dangle": [2, "always-multiline"],
