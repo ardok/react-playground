@@ -1,0 +1,34 @@
+{
+  "name": "game-of-life",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "dotty": "^0.0.2",
+    "global": "^4.3.2",
+    "lodash.isequal": "^4.5.0",
+    "lodash.isequalwith": "^4.4.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-import": "^2.6.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "npm run lint && react-scripts test --env=jsdom",
+    "lint": "eslint .",
+    "lintfix": "eslint --fix .",
+    "eject": "react-scripts eject"
+  },
+  "engine": {
+    "node": "6.10.0",
+    "npm": "4.0.5"
+  }
+}
