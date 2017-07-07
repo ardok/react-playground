@@ -7,6 +7,8 @@ import Select from '../select';
 import GameOfLife from '../../game/game-of-life';
 import {presetBoards} from '../../constants/board';
 
+import {Flex} from '../shared-components';
+
 const presetBoardOptions = [
   {value: 'custom', label: 'CUSTOM'},
   ...(Object.keys(presetBoards).map((key) => ({value: key, label: presetBoards[key].label || key}))),
@@ -86,7 +88,7 @@ class SeedContent extends Component {
     } = this.props;
     return (
       <div>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <Flex>
           <div>
             <div style={{fontSize: '12px', fontWeight: 500}}>Seed Mode</div>
             <Select
@@ -114,13 +116,13 @@ class SeedContent extends Component {
             {hasGame && <button onClick={onCancelChangeSeed}>Cancel / Go Back</button>}
             <button onClick={() => onSetSeed(board)}>Set Seed</button>
           </div>
-        </div>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '24px'}}>
+        </Flex>
+        <Flex style={{marginTop: '24px'}}>
           <GameBoard
             board={board}
             onCellClick={this.onCellClick}
           />
-        </div>
+        </Flex>
       </div>
     );
   }

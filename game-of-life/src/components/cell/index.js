@@ -1,23 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-// import {styled} from 'styletron-react';
+import {styled} from 'styletron-react';
 
 import {colors} from '../../helper/style';
 import {isEqualNoFunction} from '../../helper/compare';
-
-// const Container = styled('div', () => ({
-//   width: '16px',
-//   height: '16px',
-//   display: 'inline-block',
-//   textAlign: 'center',
-// }));
-
-const containerStyle = {
-  width: '16px',
-  height: '16px',
-  display: 'inline-block',
-  textAlign: 'center',
-};
 
 const baseDotStyle = {
   width: '2px',
@@ -28,7 +14,7 @@ const baseDotStyle = {
   display: 'inline-block',
   marginBottom: '3px',
   opacity: 0.7,
-  // transition: 'opacity 200ms, background-color 200ms, border 200ms',
+  transition: 'background-color 200ms, width 100ms',
 };
 
 const liveDotStyle = {
@@ -40,37 +26,30 @@ const liveDotStyle = {
   opacity: 1,
 };
 
+const Container = styled('div', () => ({
+  width: '16px',
+  height: '16px',
+  display: 'inline-block',
+  textAlign: 'center',
+}));
+
+const Dot = styled('div', ({isLive}) => ({
+  ...baseDotStyle,
+  ...(isLive ? liveDotStyle : {}),
+}));
+
 class Cell extends Component {
   shouldComponentUpdate(nextProps) {
     return !isEqualNoFunction(nextProps, this.props);
   }
 
   render() {
-    const {isLive, style, ...otherProps} = this.props;
-    const finalStyle = {
-      ...containerStyle,
-      ...style,
-    };
+    const {isLive, ...otherProps} = this.props;
     return (
-      <div style={finalStyle} {...otherProps}>
-        <div
-          style={{
-            ...baseDotStyle,
-            ...(isLive ? liveDotStyle : {}),
-          }}
-        />
-      </div>
+      <Container {...otherProps}>
+        <Dot isLive={isLive} />
+      </Container>
     );
-    // return (
-    //   <Container {...otherProps}>
-    //     <div
-    //       style={{
-    //         ...baseDotStyle,
-    //         ...(isLive ? liveDotStyle : {}),
-    //       }}
-    //     />
-    //   </Container>
-    // );
   }
 }
 

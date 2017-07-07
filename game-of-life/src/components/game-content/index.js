@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import GameBoard from '../game-board';
 
+import {Flex} from '../shared-components';
+
 const GameContent = (props) => {
   const {
     currentGameState,
@@ -18,7 +20,7 @@ const GameContent = (props) => {
   } = props;
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Flex>
         {!isSimulating && <button onClick={onChangeSeed}>Change Seed</button>}
         {isSimulating && <button onClick={onSimulateStop}>Stop Simulation</button>}
         {!isSimulating &&
@@ -28,8 +30,8 @@ const GameContent = (props) => {
             <button style={{marginLeft: '12px'}} onClick={onDeathTick}>Death Tick!</button>
           </div>
         }
-      </div>
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      </Flex>
+      <Flex>
         <div style={{marginTop: '4px', marginBottom: '4px', height: '60px', textAlign: 'center'}}>
           {/* The height style is to keep the element from jumping around. Adjust as you add more elements into this div */}
           <div>
@@ -38,10 +40,10 @@ const GameContent = (props) => {
           {currentGameIterationDead > -1 && <div>All cells dead after {currentGameIterationDead} iteration{currentGameIterationDead > 1 ? 's' : ''}</div>}
           {deathTickResult && <div>{deathTickResult}</div>}
         </div>
-      </div>
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      </Flex>
+      <Flex>
         <GameBoard board={currentGameState} />
-      </div>
+      </Flex>
     </div>
   );
 };

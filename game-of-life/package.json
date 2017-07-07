@@ -10,7 +10,9 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "styletron-client": "^2.5.7",
+    "styletron-react": "^2.5.8"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -22,6 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "watch": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run lint && react-scripts test --env=jsdom",
     "lint": "eslint .",

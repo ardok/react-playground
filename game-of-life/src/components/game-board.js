@@ -44,13 +44,6 @@ class SeedBoard extends Component {
                 cellProps.onClick = () => wrapperCellClick(rowIdx, colIdx);
               }
               return <Cell {...cellProps} />;
-                // return (
-                //   <Cell
-                //     key={`${rowIdx}-${colIdx}`}
-                //     isLive={cell === GameOfLife.cellStates.LIVE}
-                //     onClick={() => wrapperCellClick(rowIdx, colIdx)}
-                //   />
-                // );
             })}
           </div>
           ))}
@@ -62,8 +55,6 @@ class SeedBoard extends Component {
 SeedBoard.propTypes = {
   board: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
   onCellClick: PropTypes.func,
-};
-SeedBoard.defaultProps = {
 };
 
 export default SeedBoard;
