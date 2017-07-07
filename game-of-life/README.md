@@ -32,7 +32,9 @@ npm run lint
 Running test will also run linting.
 
 ### Wishlist
+* Clean up states on the container -- need more thoughts on this. Mentioning this mainly because it looks messy?
 * More tests
 * Able to set seed with `textarea`, by specifying the array instead of clicking the dots one by one like what I have currently.
 * Seed content has many edge cases that haven't been covered yet. For example:
   * Select a config -> change the board size, and the config dropdown stays at the same value.
+* Of course, more styling to make it look prettier

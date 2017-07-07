@@ -5,6 +5,7 @@
   "dependencies": {
     "dotty": "^0.0.2",
     "global": "^4.3.2",
+    "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
     "lodash.isequalwith": "^4.4.0",
     "prop-types": "^15.5.10",

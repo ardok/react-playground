@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import cloneDeep from 'lodash.clonedeep';
 
 import GameBoard from '../game-board';
 import Select from '../select';
@@ -40,7 +41,9 @@ class SeedContent extends Component {
   }
 
   onCellClick = ({rowIdx, colIdx, cellState}) => {
-    const newBoard = this.state.board.slice().map((e) => e.slice());
+    // Need to clone every single element inside this nested array
+    // We could just use good-ole `slice`, but whatever
+    const newBoard = this.state.board.map((e) => cloneDeep(e));
     newBoard[rowIdx][colIdx] = cellState;
     this.props.onBoardConfigChange({
       target: {

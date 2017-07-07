@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import document from 'global/document';
 // import './App.css';
 
 import GameOfLife from './game/game-of-life';
@@ -26,6 +27,10 @@ class App extends Component {
 
       isSimulating: false,
     };
+  }
+
+  componentDidMount() {
+    document.body.style.backgroundColor = '#ECEFF1';
   }
 
   onChangeSeed = () => {
