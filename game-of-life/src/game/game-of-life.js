@@ -16,6 +16,9 @@ We are doing this so that it is easier for us to somehow add more metadata into 
 */
 export default class GameOfLife {
   /**
+   * You will notice that we are using a different format for our "board" inside this class.
+   * We convert the board from 2 dimensional array into array like: [ [{value: 1}, {value: 0}], [{value: 0}, {value: 0}], ... ]
+   * Mainly so that it's easy for us to later add more properties as needed to every single cell.
    *
    * @param {Array.<number[]>} seed -- 2 dimensional array containing states
    */
@@ -58,6 +61,11 @@ export default class GameOfLife {
     return this.seed;
   }
 
+  /**
+   * Get the current state of the board.
+   * We will return it to the normal format where each cell just contains the state of the cell (number), instead of object.
+   * @returns {Array.<number[]>}
+   */
   get getCurrentState() {
     return deconstructBoard(this.currentState);
   }

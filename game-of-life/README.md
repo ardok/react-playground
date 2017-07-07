@@ -38,3 +38,4 @@ Running test will also run linting.
 * Seed content has many edge cases that haven't been covered yet. For example:
   * Select a config -> change the board size, and the config dropdown stays at the same value.
 * Of course, more styling to make it look prettier
+* We could use redux, but I see no value for this simple app though. 
