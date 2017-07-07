@@ -10,6 +10,18 @@ You need to set the seed first from the seed page (you won't miss it as it is th
 
 ### Development
 
+Environment:
+```
+node -v
+v6.10.0
+```
+```
+npm -v
+4.0.5
+```
+
+*Please make sure that you have the appropriate node and npm versions first if you happen to not be able to run the app*
+
 Clone the repo.
 Navigate into `game-of-life` directory.
 
@@ -19,6 +31,8 @@ npm start
 ```
 
 Go to `localhost:3000` to view the app.
+
+The UI should be self-explanatory.
 
 Run tests?
 ```
